@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+	<script src="js/slider.js"></script>
+	<script src="js/menu.js"></script>
+	<script src="js/best.js"></script>
+	<script src="js/best_title.js"></script>
+
+
+	<style>
+		/* 헤더 */
+		* {margin:0; box-sizing: border-box; font-family: "맑은 고딕";}	
+		ul, ol, li {list-style:none; margin: 0; padding: 0;}
+		header {width: 1260px; height: 80px; margin: 0 auto; display:flex; justify-content:space-between;}
+
+		#wrap {width:100%; position:fixed; z-index:3; background-color: #fff; margin:0 auto;}
+
+		#logo {width: 300px; height: 80px; float: left; padding: 10px 0 0 0px;}
+		#logo2 {width: 370px; height: 80px; float: right; margin: 0px 0 0 100px; margin: 0px 50px 0 0px;}
+
+		#logo2 > ul {font-size: 13px;}
+		#logo2 > ul > li {float: left; margin: 30px 10px;}
+		#logo2 > ul > li > a {text-decoration: none; color: #666;}
+		#logo2 > ul > li > a:hover {opacity: 0.8;}
+		#logo2 > ul > a > img {padding: 25px 0 0 0px;}
+
+		#login {width: 300px; height: 80px; float: right;}
+		#login > .imgbox > a > img {float: right; margin: 10px 0 0 0px; padding:10px;}
+
+		nav {width: 1260px; height: 70px; margin: 0 auto;}
+		.menu {width: 1260px; font-size: 17px; float: left; position: relative; display: flex;  justify-content: center; align-items:center ;}
+		.menu > li {float: left;  margin: 20px 70px 0 70px; display:flex; justify-content:center;}
+		.menu > li > a {text-decoration: none; color: #000;}
+		.menu > li > a:hover {color: orange;}
+
+		.menu > li:nth-of-type(2) {left: 10%;}
+
+		.sub {background:#fff; width:10%; position:absolute; top: 70px; z-index:3;  text-decoration: none; display:none;}
+
+		.sub > li {width:100%; text-align:center; border-right: 1px solid #666; padding:10px 0px;}
+		.sub > li:hover {background-color:#666; text-decoration: none; display:block;}
+		.sub > li > a {text-decoration: none; color: #000; font-size: 12px;}
+
+
+
+
+		/* 슬라이더 */
+
+		#slider {width: 1260px; height: 550px; margin: 0 auto; position: relative; overflow: hidden;}
+		.slide {width: 3780px;}
+
+		.slide > li {width: 2000px; height: 550px; float: left;}
+		.slide > li > img {width: 100%; height: 100%;}
+
+
+		span {position: absolute; top:60%; display: block; font-size: 38px; color:#fff; line-height: 40px; background: rgba(0,0,0,0.6); cursor: pointer; height: 60px; transform: translateY(-50%);}
+
+		/*span:hover {background: rgba(255,255,255,0.8); color:#000;}*/
+		.prev {left:0; padding: 0px 20px;}
+		.prev:hover {color:orange;}
+
+		.next {right:0; padding: 0px 20px;}
+		.next:hover {color: orange;}
+
+
+
+
+
+		/* 메인 베스트 상품 */
+
+		main {
+			width: 1260px;
+			height: 1000px;
+			margin: 0 auto;
+		}
+
+		#product {
+			width:1260px; 
+			height:1200px;
+			margin: 0 auto;
+		}
+
+		#product > h1 {
+			font-size: 22px; 
+			color: #000;
+			text-align: center;
+			padding:140px 0 0 0px;
+		}
+
+		#product > p {
+			text-decoration:none;
+			color:#666; 
+			text-align:center;
+			font-size:12px; margin:10px 0 60px 0px;}
+
+
+			#product > .box {
+				width: 280px;
+				height: 350px;
+				padding: 10px; 
+				margin: 60px; 
+				display: inline-block;
+				text-align:left; 
+				overflow: hidden;
+			}
+
+			#product > .box > a > img {
+				width: 260px;
+				height: 230px;
+			}
+
+			#product > .box > a > img:hover {
+				opacity: 0.7;
+			}
+
+			#product > .box > h5 > a {
+				text-decoration:none; 
+				color:#000;
+				text-align:center; 
+				font-size: 12px;
+			}
+
+			#product > .box > h4 > a {
+				text-decoration:none; 
+				color:#666; 
+				text-align:center; 
+				font-size: 14px;
+			}
+
+			#product > .box > h6 > a {
+				text-decoration:none; 
+				color:#666; 
+				text-align:center;
+				font-size:11px;
+			}
+
+			#product > .box > p > a {
+				text-decoration:none; 
+				color:#000; 
+				text-align:center;
+				font-size:12px;
+			}
+
+			#product > .box > p {
+				display: inline;
+				color: orange; 
+				font-weight:bold;
+				font-size:11px;
+			}
+
+
+         /*
+         #product > .box > .deli {
+            background-color:#fff;
+            display:inline-block; 
+            border: 1px solid #ddd; 
+            font-size: 10px;
+            margin: 10px 0 0 0px;
+            padding: 1px; 
+            font-size:11px;
+         }
+
+         
+         #product > .box > .new {
+            content: "NEW"; 
+            
+         }
+         */
+
+			#product > .box:nth-of-type(1) > p:nth-of-type(3) {border: 1px solid #ddd; font-size: 10px; margin: 10px 0 0 0px; padding: 1px; font-size:11px;}
+			#product > .box:nth-of-type(2) > p:nth-of-type(4) {background-color:orange; color: #000; font-size: 10px; margin: 10px 0 0 0px; padding: 1px; font-size:11px;}
+
+
+			#product > div:first-of-type {margin: 0 0 0 20px;}
+			#product > div:nth-of-type(2) {margin: 0 0 0 20px;}
+			#product > div:nth-of-type(3) {margin: 0 0 0 20px;}
+			#product > div:nth-of-type(4) {margin:0px 0 0 20px;}
+			#product > div:nth-of-type(5) {margin:30px 0 0 20px;}
+			#product > div:nth-of-type(6) {margin:0px 0 0 20px;}
+			#product > div:nth-of-type(7) {margin:30px 0 0 20px;}
+			#product > div:last-of-type {margin: 30px 0 0 20px;}
+
+
+		</style>
+
+
+
+	</head>
+
+
+
+	<body>
+
+
+		<!-- 헤더 -->
+
+
+		<div id="wrap">
+
+
+
+			<header>
+				<div id="logo">
+					<img src="img/logo_img.img" alt="로고">
+				</div>
+
+
+
+				<div id="logo2">
+					<ul>
+						<li><a href="#">BRAND</a></li>
+						<li><a href="#">BEST</a></li>
+						<li><a href="#">SALE</a></li>
+						<li><a href="#">REVIEW</a></li>
+						<li><a href="#">|</a></li>
+						<li><a href="#">MAGAZINE</a></li>
+						<a href="#"><img src="img/book.jpg" alt="book"></a>
+					</ul>
+				</div>
+
+
+				<div id="login">
+					<div class="imgbox">
+						<a href="#"><img src="img/d.jpg" alt="로그인1"></a>
+						<a href="#"><img src="img/j.jpg" alt="로그인1"></a>
+						<a href="#"><img src="img/p.jpg" alt="로그인1"></a>
+					</div>
+				</div>
+
+
+
+			</header>
+
+
+			<hr>
+
+			<nav>
+
+				<ul class="menu">
+					<li><a href="#">KITCHEN</a>
+						<ul class="sub">
+							<li><a href="#">조리도구</a></li>
+							<li><a href="#">냄비/후라이팬</a></li>
+							<li><a href="#">칼/가위/도마</a></li>
+							<li><a href="#">커트러리/수저</a></li>
+							<li><a href="#">그릇/식기</a></li>
+							<li><a href="#">컵/머그/티팟</a></li>
+						</ul>
+					</li>
+
+					<li><a href="#">LIVING</a>
+						<ul class="sub">
+							<li><a href="#">욕실/위생용품</a></li>
+							<li><a href="#">청소용품</a></li>
+							<li><a href="#">수납/정리용품</a></li>
+							<li><a href="#">세탁용품</a></li>
+							<li><a href="#">페브릭/소품</a></li>
+						</ul>
+					</li>
+
+
+					<li><a href="#">LIFE</a>
+						<ul class="sub">
+							<li><a href="#">생활가전</a></li>
+							<li><a href="#">문구</a></li>
+							<li><a href="#">헬스케어</a></li>
+							<li><a href="#">뷰티</a></li>
+							<li><a href="#">디지털/액세서리</a></li>
+							<li><a href="#">지갑/케이스</a></li>
+						</ul>
+					</li>
+
+					<li><a href="#">HOME</a>
+						<ul class="sub">
+							<li><a href="#">조명/시계</a></li>
+							<li><a href="#">디퓨저/홈케어</a></li>
+							<li><a href="#">캔들</a></li>
+							<li><a href="#">뷰티</a></li>
+							<li><a href="#">플라워/가드닝</a></li>
+							<li><a href="#">액자/거울</a></li>
+						</ul>
+					</li>
+
+					<li><a href="#">PET</a>
+						<ul class="sub">
+							<li><a href="#">사료</a></li>
+							<li><a href="#">간식</a></li>
+							<li><a href="#">산책/외출</a></li>
+							<li><a href="#">상,하의</a></li>
+							<li><a href="#">올인원/원피스</a></li>
+							<li><a href="#">아우터</a></li>
+						</ul>
+					</li>
+
+					<li><a href="#">FOOD</a>
+						<ul class="sub">
+							<li><a href="#">선물세트</a></li>
+							<li><a href="#">티/건강음료/커피</a></li>
+							<li><a href="#">전통주</a></li>
+							<li><a href="#">꿀/잼/청</a></li>
+							<li><a href="#">장/오일/식초</a></li>
+							<li><a href="#">제과/스낵/견과</a></li>
+						</ul>
+					</li>
+
+				</ul>
+			</nav>
+			<hr>
+
+
+
+
+		</div>
+
+
+
+		<!-- 슬라이더 -->
+
+		<div id="slider">
+<!--
+	<a href="#"><img src="img/slider.jpg" alt="슬라이더 이미지"></a>-->
+
+	<ul class="slide">
+		<li><img src="https://images.unsplash.com/photo-1575721697801-937774cc44ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="slide image"></li>
+		<li><img src="https://images.unsplash.com/photo-1503197979108-c824168d51a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=1491&q=80" alt="slide image"></li>
+		<li><img src="https://images.unsplash.com/photo-1507496380922-d75b080daf03?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"  alt="slide image"></li>
+		<li><img src="https://images.unsplash.com/photo-1655664994688-bb42e78be9a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"  alt="slide image"></li>
+		<li><img src="https://images.unsplash.com/photo-1656290190937-341a85f3104b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"  alt="slide image"></li>
+		<li><img src="https://images.unsplash.com/photo-1656342483589-76c999ff1bd0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"  alt="slide image"></li>
+	</ul>
+
+	<span class="prev">&lt;</span>
+	<span class="next">&gt;</span>
+
+
+
+</div>
+
+
+<!-- 메인 베스트 아이템 -->
+
+<main>
+
+	<div id="product">
+
+		<h1 id="title"><pre>B E S T   I T E M S</pre></h1>
+		<p>포플의 베스트 상품</p>
+
+
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+
+	</div>
+
+</main>
+
+
+</body>
+</html>	              

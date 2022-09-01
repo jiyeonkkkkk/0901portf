@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+
+
+
+	<style>
+
+		* {margin:0; box-sizing:border-box; font-family:"맑은 고딕";}
+		ul, ol, li {list-style:none; margin:0; padding:0;}
+
+
+		/* 섹션 브랜드 초이스 */
+
+
+		#brand {width: 1260px; height: 800px; margin: 0 auto;}
+
+		#brand > h1 {font-size: 22px; color: #000; text-align: center; margin: 0 auto; padding:100px 100px 0 100px;}
+		#brand > p {text-decoration:none; color:#666; text-align:center; font-size:12px; margin:10px 0 60px 0px;}
+
+
+		#brand > .box {width: 280px; height: 600px; display: inline-block; margin: 10px; text-align: center; border: 1px solid #ddd;}
+
+		#brand > .box > a > img {width: 278px; height: 300px;}
+		#brand > .box > a > img:hover {opacity: 0.8;}
+
+		#brand > div:first-of-type {margin:0px 0 0 45px;}
+		#brand > div:nth-of-type(2) {margin:0px 0 0 10px;}
+		#brand > div:last-of-type {margin:0px 0 0 10px;}
+
+		#brand > .box > h3 {margin: 30px 0px;}
+		#brand > .box > p {margin: 70px 0px;}
+
+		#brand > .box > h3 > a {text-decoration: none; color: #000; text-align: center; padding: 60px 0 0 0px; margin: 50px 0 0 0px; font-size:18px;}
+		#brand > .box > h6 > a {text-decoration: none; color: #666; text-align: center;}
+		#brand > .box > p > a {text-decoration: none; color: #666; text-align: center; font-size: 7px; margin: 100px; 0 0 0px; margin: 30px 0 0 0px;}
+
+	</style>
+
+	<script>
+
+		$(function(){
+
+				$.ajax({
+
+					url: "./brand.json",
+
+					dataType: "json",
+
+					success : function(data){
+
+						if(data.length>0){
+
+							for(var i in data){
+
+								$(".box").eq(i).append('<a href="#">' + "<img src='img/"+data[i].url+"'/>" + '</a>'); 
+
+								$(".box").eq(i).append('<h3><a href="#">'+data[i].title+"</a><h3>");     
+
+								$(".box").eq(i).append('<h6><a href="#">'+data[i].subtitle+"</a></h6>");                             
+
+								$(".box").eq(i).append('<p><a href="#">'+data[i].brand+"</a></p>");  
+
+
+							}
+
+						}
+
+					}
+
+				});
+
+			});
+
+	</script>
+
+
+</head>
+
+<body>
+
+
+<!-- 섹션 브랜드 초이스 -->
+
+	<section id="brand">
+		<h1><pre>B R A N D   C H O I C E</pre></h1>
+		<p>포플이 직접 엄선한 추천 브랜드</p>
+
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</section>
+
+	<script>
+
+		window.onload = function (){
+
+
+
+        // title
+
+        var title =document.getElementById("title")
+
+        title.innerHTML = "B R A N D  C H O I C E";
+
+
+        // sub title
+
+        var subtitle = document.createElement("p");
+
+        var textnode = document.createTextNode("포플의 직접 엄선한 추천 브랜드");
+
+        subtitle.appendChild(textnode);
+
+        title.appendChild(subtitle);
+
+
+	</script>
+
+
+</body>
+</html>	

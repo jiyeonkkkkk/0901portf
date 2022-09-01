@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kim Jiyeon PORTFOLIO</title>
+
+    <script src="https://kit.fontawesome.com/80a2be1de2.js" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+
+    <style>
+
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif;}
+        ul,li,ol {list-style: none; margin:0; padding:0;}
+        a {text-decoration: none;}
+
+        body {width: 100%; height: 100vh; -scroll:0; overflow-x: hidden; background: #fff;}
+        body::-webkit-scrollbar { width: 8px; height: 15px; background: #fff; }
+        body::-webkit-scrollbar-thumb { border-radius: 10px; background-color: #fbb03b;}
+        body::-webkit-scrollbar-track { background: #ffffff; }
+
+/* right icon menu */
+#menu {width:70px; height:340px; position:fixed; z-index: 5; right:0; top:50%; transform: translateY(-50%); display: flex; flex-wrap: wrap; align-content: space-between;}
+#menu > li {width: 70px; height: 52px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; background-color: #444; color: #999; border-radius: 10px 0 0 10px; font-size: 10px; font-weight: 300; cursor: pointer;}
+#menu > li a {font-size: 20px; color: #fbb03b; transition: all 0.25s;}
+#menu > li:hover a {color: #fff;}
+
+/* main start */
+#fullpage {margin: 0; padding: 0; position: relative;}
+
+/* section 1 : home */
+#fullpage > .section-01 {width: 100%; margin:0 auto; overflow: hidden; position: relative; background-color: #333;}
+
+/* 포트폴리오 레이아웃*/
+.bodywrap {width:1340px; height:100%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;}
+.introduce {width: 40%; height: 700px; display: flex; flex-flow: row wrap; justify-content: flex-start; align-content: space-between;}
+.webpage {width: 60%; height: 100%; overflow: hidden; position: relative;}
+.webpage img {width: 100%; height: auto;}
+
+.bodywrap h1 {width: 100%; font-size: 44px; font-weight: 400; margin-bottom: 50px; color: #444; letter-spacing: -0.5px;}
+.bodywrap h1 em {font-style: normal; font-weight: 900;}
+.bodywrap h4 {width: 100%; font-size: 18px; font-weight: 400; color: #444; margin-bottom: 50px;}
+.bodywrap h5 {width: 100%; font-size: 16px; font-weight: 700; color: #444; letter-spacing: 0.5px; line-height: 10px;}
+.bodywrap p {width: 100%; height: 320px; font-size: 14px; font-weight: 300; color: #444; line-height: 160%;}
+
+/* web 슬라이드*/
+.webpage .bhoverbox {width: 100%; height: 100%; cursor: pointer; position: absolute; z-index: 2; top:0; transition: 0.3s ease-in-out; display: flex; justify-content: center; align-items: center;}
+
+.webpage .bhoverbox > i {width: 34px; line-height: 30px; font-size:20px; color: #999; border: 2px solid #999; border-radius: 500px; text-align: center; display: none;}
+.webpage .bhoverbox:hover {background-color: rgba(0,0,0,0.3)}
+.webpage .bhoverbox:hover > i {display: block;}
+
+/* section 1 : home */
+#fullpage > .section-01 {width: 100%; height: 100%; position: relative; display: flex; justify-content: space-between;}
+
+.section-01 #homeleft_grid {width: 70%; height: 100%; position: relative;}
+.section-01 #homeleft_grid .typo {position: absolute; right: -23px; top: 50%; transform: translateY(-50%); height: 320px; z-index: 5;}
+.section-01 #homeleft_grid .typo img {height: 100%;}
+
+#about {position: absolute; top: 5%; left: 5%; height: 90%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;}
+#about h3 {color: #fbb03b; font-size: 16px; font-weight: 300;}
+#about h3 em {font-style: normal; font-weight: 600;}
+
+.about_icon > li {background-color: #fbb03b; border-radius: 100px; cursor: pointer; position: relative; text-align: center; margin-bottom: 8px; z-index: 3;}
+.about_icon > li a {width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; color: #333; font-size: 22px; transition: all 0.3s; }
+.about_icon > li:hover a {color: #fff;}
+
+.burble {display: none;}
+.burble li {position: absolute; top: 10px; left: 120px; transform: translateX(-50%); width: 140px; background-color: #fbb03b; color: #333; font-size: 12px; font-weight: 400; text-align: center; line-height: 20px; border-radius: 100px;}
+
+/* Typing */
+.typingbox {width: 490px; text-align: left; position: absolute; right: 0; top: 50%; transform: translateY(-50%);}
+.typing-txt{display: none;}
+.typeing-txt ul{list-style:none;}
+.typing {display: inline-block; animation-name: cursor; animation-duration: 0.3s; animation-iteration-count: infinite; font-size: 21px; font-weight: 400; color: #fbb03b;}
+
+@keyframes cursor{ 0%{border-right: 1px solid #fff} 50%{border-right: 1px solid #000} 100%{border-right: 1px solid #fff} }
+
+.section-01 #homeright_grid {width: 30%; background-color: #fbb03b; position: relative;}
+.section-01 #homeright_grid .typo {position: absolute; left: 4%; top: 50%; transform: translateY(-50%); height: 320px; display: flex; justify-content: flex-end; align-items: flex-end; z-index: 5;}
+
+
+/* section 2 : 프로젝트1 */
+#fullpage > .section-02 {width: 100%; height: 100%; background-color: #fff0ef;}
+.section-02 h1 {font-size:50px;  font-weight: 300; color:#000;  letter-spacing: 0.2px; /*width:260px;*/}
+.section-02 h2 {width: 100%; font-size: 32px; font-weight: 900; color:#EF544D; letter-spacing: 0.5px;}
+.section-02 h4 {color: #666;}
+.section-02 h5 {font-size:15px;}
+.section-02 p {font-size:13px;}
+.section-02 .color {width: 100%; height: 55px; display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: center; margin-bottom: 40px;}
+.section-02 .color li {width:35px; height:35px; border-radius:50%; margin-right: 10px;}
+.section-02 .color li:first-of-type {background-color: #EF544D;}
+.section-02 .color li:nth-of-type(2) {background-color: #C43730;}
+.section-02 .color li:last-of-type {background-color: #FFF;}
+
+.section-02 .btn_main {width: 130px; line-height: 36px; margin-right: 10px; padding: 0; background-color: #EF544D; color: #fff; font-size: 13px; text-align: center; cursor: pointer; transition: all 0.3s;}
+.section-02 .btn_main:hover {background-color: #C43730; color: #fff;}
+
+.section-02 .btn_sub {width: 130px; line-height: 36px; margin-right: 10px; padding: 0; background-color: #EF544D; color: #fff; font-size: 13px; text-align: center; cursor: pointer; transition: all 0.3s;}
+.section-02 .btn_sub:hover {background-color: #C43730; color:#fff;}
+
+/* section 3 : 프로젝트2 */
+/*#fullpage > .section-03 {width: 100%; margin: 0 auto; background-color: #eee;}
+.section-03 h2 {width: 100%; font-size: 26px; font-weight: 900; color: #5e1dfd; letter-spacing: 0.5px;}
+.section-03 .color {width: 100%; height: 60px; display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: center; margin-bottom: 40px;}
+.section-03 .color li {width:40px; height:40px; border-radius:50%; margin-right: 10px;}
+.section-03 .color li:first-of-type {background-color: #5e1dfd;}
+.section-03 .color li:nth-of-type(2) {background-color: #1b1b1b;}
+.section-03  .color li:last-of-type {background-color: #ddd;}*/
+
+#fullpage > .section-03 {width: 100%; height: 100%; background-color: #f2f2f2;}
+.section-03 h1 {font-size:50px;  font-weight: 300; color:#000;  letter-spacing: 0.2px; /*width:260px;*/}
+.section-03 h2 {width: 100%; font-size: 32px; font-weight: 900; color:#EF544D; letter-spacing: 0.5px;}
+.section-03 h4 {color: #666;}
+.section-03 h5 {font-size:15px;}
+.section-03 p {font-size:13px;}
+.section-03 .color {width: 100%; height: 55px; display: flex; flex-flow: row wrap; justify-content: flex-start; align-items: center; margin-bottom: 40px;}
+.section-03 .color li {width:35px; height:35px; border-radius:50%; margin-right: 10px;}
+.section-03 .color li:first-of-type {background-color: #292A33;}
+.section-03 .color li:nth-of-type(2) {background-color: #FFF;}
+.section-03 .color li:last-of-type {background-color: #E93E21;}
+
+.section-03 .btn_main {width: 130px; line-height: 36px; margin-right: 10px; padding: 0; background-color: #292A33; color: #fff; font-size: 13px; text-align: center; cursor: pointer; transition: all 0.3s; border: 1px solid #444;}
+.section-03 .btn_main:hover {background-color: #fff; color: #444; border: 1px solid #444;}
+
+.section-03 .btn_sub {width: 130px; line-height: 36px; margin-right: 10px; padding: 0; background-color: #292A33; color: #fff; font-size: 13px; text-align: center; cursor: pointer; transition: all 0.3s; border: 1px solid #444;}
+.section-03 .btn_sub:hover {background-color: #fff; color:#444; border: 1px solid #444;}
+
+
+.section-03 .mobile {width: 235px; height: 520px; position: absolute; bottom: 5%; left: 44%; display: block; transform: translateX(-50%); z-index:5; background-image: url(../img/mobile-01.png); background-size: 100% 100%;}
+.section-03 .mobile_box {width: 225px; height: 510px; position: absolute; top: 50%; left: 50.6%; transform: translate(-50%,-50%); border-radius: 28px; overflow: hidden;}
+.section-03 .mobile_box ul li {width: 225px; height: 510px;}
+.section-03 .mobile_box ul li img {width: 100%; height: auto;}
+
+
+
+/* ---- reset ---- */
+
+body {
+  margin: 0;
+  font:normal 75% Arial, Helvetica, sans-serif;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 1;
+}
+
+/* ---- stats.js ---- */
+
+.js-count-particles{
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles{
+  -webkit-user-select: none;
+}
+
+#stats{
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles{
+  border-radius: 0 0 3px 3px;
+}
+
+
+</style>
+<script>
+
+   $(function() {
+    new fullpage("#fullpage", {
+        sectionsColor: [],
+        verticalCentered: false,
+        scrollBar: true,
+        anchors: ['anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5', 'anchor6'],
+        menu: '#menu',
+        scrollingSpeed: 300,
+    });
+})
+
+   $(function(){
+    //반디앤루니스
+    $("#bandibox").mouseenter(function(){
+        $("#bandi > li").stop().animate({marginTop:"-1150px"},8000)
+    }).mouseleave(function(){
+        $("#bandi > li").stop().animate({marginTop:"0px"},3000)
+    })
+    
+    //댄스스튜디오
+    $("#dancbox").mouseenter(function(){
+        $("#danc > li").stop().animate({marginTop:"-1150px"},8000)
+    }).mouseleave(function(){
+        $("#danc > li").stop().animate({marginTop:"0px"},3000)
+    })
+    
+    //POFO
+    $("#pofobox").mouseenter(function(){
+        $("#pofo > li").stop().animate({marginTop:"-1150px"},8000)
+    }).mouseleave(function(){
+        $("#pofo > li").stop().animate({marginTop:"0px"},3000)
+    })
+    
+    //푸드스토어
+    $("#foodbox").mouseenter(function(){
+        $("#food > li").stop().animate({marginTop:"-1150px"},8000)
+    }).mouseleave(function(){
+        $("#food > li").stop().animate({marginTop:"0px"},3000)
+    })
+})
+
+
+
+</script>
+</head>
+
+
+<body>
+
+
+
+    <!--section 2 : 프로젝트 01-->
+    <div id="fullpage"> 
+       <div class="section section-02">
+        <div class="bodywrap">
+            <div class="introduce">
+                <h1>PROJECT<em>01</em></h1>
+                <h2>INTERPARK 도서</h2>
+                <h4>Open API, Json</h4>
+                <h5>POINT COLOR</h5>
+                <ul class="color">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <p>국내 웹 도서 사이트 인터파크 도서의 클론 사이트입니다.<br>
+                    페이지 내 도서들은 KaKao에서 제공하는 Open API를 사용하였습니다.<br><br>
+
+                    도서사이트의 특징인 많은 정보로 인하여 복잡한 레이아웃을<br>
+                    좀 더 간결하며 모던하게 재해석했습니다.<br><br>
+
+                    뿐만 아니라 정적인 느낌을 탈피하고, 더 많은 정보를 제공하고자<br>
+                    jQuery를 활용하여 네비게이션과 슬라이드를 접목시킨 상품 리스트, 게시판 등의<br>
+                    다양한 인터렉션 요소를 배치하였습니다.<br><br>
+
+                도서를 구매할 수 있는 Sub Page도 함께 제작하였습니다.</p>
+                <a href="portfolio/bandi/main.html" target="_blank" class="btn_main">MAIN PAGE</a>
+                <a href="portfolio/bandi/sub.html" target="_blank" class="btn_sub">SUB PAGE</a>
+            </div>
+
+            <div class="webpage">
+                <div class="bodyimg">
+                    <ul id="bandi">
+                        <li><img src="img/bandi_web.jpg" alt="web1"></li>
+                    </ul>
+                </div>
+
+                <div class="bhoverbox" id="bandibox" onclick="window.open('html_3/main.html')">
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--section 3 : 프로젝트 02-->
+    <div class="section section-03">
+        <div class="bodywrap">
+            <div class="introduce">
+                <h1>PROJECT <em>02</em></h1>
+                <h2>The Zayka</h2>
+                <h4>Responsive Website</h4>
+                <h5>POINT COLOR</h5>
+                <ul class="color">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <p>다양한 음식들과 서비스를 제공하는 레스토랑 The Zayka의 홍보 웹사이트입니다.<br><br>
+                    <!-- 스크롤이 내려가도 상단 네비게이션 이동이 용이하도록<br>
+                    Fixed Menu를 사용하였습니다.<br> -->
+                    모바일, 태블릿 사용자에 맞게 반응할 수 있도록<br>
+                    미디어 쿼리를 사용하여 반응형 웹페이지로 제작 되었습니다.<br><br>
+                    사선 레이아웃으로 활동적인 느낌을 주었으며,<br>
+                    독특한 색감으로 주목도를 높이는 것이 포인트입니다.<br><br>
+                    Sub Page를 블로그 형식으로 제작하여<br>
+                강사진의 프로필 및 공연 내용을 상세하게 제공하고 있습니다.</p>
+                <a href="portfolio/dance/main.html" target="_blank" class="btn_main">MAIN PAGE</a>
+                <a href="portfolio/dance/sub.html" target="_blank" class="btn_sub">SUB PAGE</a>
+            </div>
+
+            <div class="mobile">
+                <div class="mobile_box" onclick="window.open('html_3/main.html')">
+                    <ul>
+                        <li><img src="img/danc_mobile1.jpg" alt=""></li>
+                        <li><img src="img/danc_mobile2.jpg" alt=""></li>
+                        <li><img src="img/danc_mobile3.jpg" alt=""></li>
+                        <li><img src="img/danc_mobile4.jpg" alt=""></li>
+                        <li><img src="img/danc_mobile5.jpg" alt=""></li>
+                        <li><img src="img/danc_mobile6.jpg" alt=""></li>
+                        <li><img src="img/danc_mobile7.jpg" alt=""></li>
+                        <li><img src="img/danc_mobile8.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="webpage">
+                <div class="bodyimg">
+                    <ul id="danc">
+                        <li><img src="img/danc_web.jpg" alt="web1"></li>
+                    </ul>
+                </div>
+
+                <div class="bhoverbox" id="dancbox" onclick="window.open('html_3/main.html')">
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+

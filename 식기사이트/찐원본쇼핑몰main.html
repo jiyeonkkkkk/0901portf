@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+
+		/* 헤더 */
+		* {margin:0; box-sizing: border-box; font-family: "맑은 고딕";}	
+		ul, ol, li {list-style:none; margin: 0; padding: 0;}
+		header {width: 1260px; height: 80px; margin: 0 auto; display:flex; justify-content:space-between;}
+
+
+
+		#logo {width: 300px; height: 80px; float: left; padding: 10px 0 0 0px;}
+		#logo2 {width: 370px; height: 80px; float: right; margin: 0px 0 0 100px; margin: 0px 50px 0 0px;}
+
+		#logo2 > ul {font-size: 13px;}
+		#logo2 > ul > li {float: left; margin: 30px 10px;}
+		#logo2 > ul > li > a {text-decoration: none; color: #666;}
+		#logo2 > ul > li > a:hover {opacity: 0.8;}
+		#logo2 > ul > a > img {padding: 25px 0 0 0px;}
+
+		#login {width: 300px; height: 80px; float: right;}
+		#login > .imgbox > a > img {float: right; margin: 10px 0 0 0px; padding:10px;}
+
+		nav {width: 1260px; height: 70px; margin: 0 auto;}
+		nav > ul {font-size: 17px;}
+		nav > ul > li {float: left;  margin: 20px 70px 0 70px;}
+		nav > ul > li > a {text-decoration: none; color: #000;}
+		nav > ul > li > a:hover {color: orange;}
+
+
+
+		/* 슬라이더 */
+
+
+		#slider {width: 1900px; height: 580px; margin: 0 auto; position:relative;}
+		#slider > a  {width: 100%; height: 100%; margin: 0 auto;}
+
+
+
+		/* 메인 베스트 아이템 */
+
+
+		main {width: 1260px; height: 1000px; margin: 0 auto;}
+		#product {width:1260px; height:1200px; margin: 0 auto;}
+		#product > h1 {font-size: 22px; color: #000; text-align: center; padding:140px 0 0 0px;}
+		#product > p {text-decoration:none; color:#666; text-align:center; font-size:12px; margin:10px 0 60px 0px;}
+
+
+		#product > .box {width: 280px; height: 350px; padding: 10px; margin: 60px; display: inline-block; text-align:left; overflow: hidden;}
+
+		#product > .box > a > img {width: 260px; height: 230px;}
+		#product > .box > a > img:hover {opacity: 0.7;}
+		#product > .box > h5 > a {text-decoration:none; color:#000; text-align:center; 
+		font-size: 12px;}
+		#product > .box > h4 > a {text-decoration:none; color:#666; text-align:center; font-size: 14px;}
+		#product > .box > h6 > a {text-decoration:none; color:#666; text-align:center; font-size:11px;}
+		
+
+		#product > .box > p > a {text-decoration:none; color:#000; text-align:center; font-size:11px;}
+		#product > .box > p {display: inline; color: orange; font-weight:bold; font-size:11px;}
+		#product > .box > .free:after {content: "무료배송"; background-color:#fff; display:inline-block; border: 1px solid #ddd; font-size: 10px; margin: 10px 0 0 0px; padding: 1px; font-size:11px;}
+		#product > .box > .new:after {content: "NEW"; background-color:orange; color: #000; display:inline-block; font-size: 10px; margin: 10px 0 0 0px; padding: 1px; font-size:11px;}
+		
+
+
+
+
+		#product > div:first-of-type {margin: 0 0 0 20px;}
+		
+		#product > div:nth-of-type(2) {margin: 0 0 0 20px;}
+
+		#product > div:nth-of-type(3) {margin: 0 0 0 20px;}
+		#product > div:nth-of-type(4) {margin:0px 0 0 20px;}
+		#product > div:nth-of-type(5) {margin:30px 0 0 20px;}
+		#product > div:nth-of-type(6) {margin:0px 0 0 20px;}
+
+		#product > div:nth-of-type(7) {margin:30px 0 0 20px;}
+		#product > div:last-of-type {margin: 30px 0 0 20px;}
+
+
+
+
+		/* 섹션 브랜드 초이스 */
+
+
+		#brand {width: 1260px; height: 800px; margin: 0 auto;}
+
+		#brand > h1 {font-size: 22px; color: #000; text-align: center; margin: 0 auto; padding:100px 100px 0 100px;}
+		#brand > p {text-decoration:none; color:#666; text-align:center; font-size:12px; margin:10px 0 60px 0px;}
+
+
+		#brand > .box {width: 280px; height: 600px; display: inline-block; margin: 10px; text-align: center; border: 1px solid #ddd;}
+
+		#brand > .box > a > img {width: 278px; height: 300px;}
+		#brand > .box > a > img:hover {opacity: 0.8;}
+
+		#brand > div:first-of-type {margin:0px 0 0 45px;}
+		#brand > div:nth-of-type(2) {margin:0px 0 0 10px;}
+		#brand > div:last-of-type {margin:0px 0 0 10px;}
+
+		#brand > .box > h3 {margin: 30px 0px;}
+		#brand > .box > p {margin: 70px 0px;}
+
+		#brand > .box > h3 > a {text-decoration: none; color: #000; text-align: center; padding: 60px 0 0 0px; margin: 50px 0 0 0px; font-size:18px;}
+		#brand > .box > h6 > a {text-decoration: none; color: #666; text-align: center;}
+		#brand > .box > p > a {text-decoration: none; color: #666; text-align: center; font-size: 7px; margin: 100px; 0 0 0px; margin: 30px 0 0 0px;}
+
+
+
+
+		/* 강아지 */
+
+
+		#love {width: 1260px; height: 550px; margin: 0 auto;}
+		#love > .box {width: 400px; height: 500px; margin: 0 auto;  padding:100px 0 0 0px;}
+		#love > a > img {width: 400px; height: 500px; margin: 0 auto;}
+
+
+
+
+
+
+
+		/* 뉴 아이템 컨텐츠 */
+
+
+		#items {width: 1260px; height: 1100px; margin: 0 auto;}
+		#contents > h1 {font-size: 22px; color: #000; text-align: center; padding:170px 100px 0 100px;}
+		#contents > p {text-decoration:none; color:#666; text-align:center; font-size:12px; margin:10px 0 60px 0px;}
+	
+
+		#contents > .box {width: 280px; height: 390px; padding: 10px; margin: 20px;display: inline-block; text-align:left; overflow: hidden;}
+		#contents > .box > a > img {width: 260px; height: 260px;}
+		#contents > .box > a > img:hover {opacity: 0.7}
+
+		#contents > .box > h5 > a {text-decoration:none; color:#000; text-align:center; font-size: 12px;}
+		#contents > .box > h4 > a {text-decoration:none; color:#666; text-align:center; font-size: 14px;}
+		#contents > .box > h6 > a {text-decoration:none; color:#666; text-align:center; font-size: 11px;}
+		
+
+		#contents > .box > p > a {text-decoration:none; color:#000; text-align:center; font-size: 11px;}
+		#contents > .box > p {display: inline; color: orange; font-weight:bold; font-size: 11px;}
+	
+
+
+		#contents > .box > .free > p > a:after {content: "무료배송"; background-color:#fff; display:inline-block; border: 1px solid #ddd; font-size: 10px; margin: 10px 0 0 0px; padding: 3px;}
+
+		#contents > div:first-of-type {margin: -10px 0 0 20px;}
+		
+		#contents > div:nth-of-type(2) {margin: 0 0 0 20px;}
+
+		#contents > div:nth-of-type(3) {margin: 0 0 0 20px;}
+		#contents > div:nth-of-type(4) {margin: 0 0 0 20px;}
+		#contents > div:nth-of-type(5) {margin:30px 0 0 20px;}
+		#contents > div:nth-of-type(6) {margin:30px 0 0 20px;}
+
+		#contents > div:nth-of-type(7) {margin:30px 0 0 20px;}
+		#contents > div:last-of-type {margin: 30px 0 0 20px;}
+
+
+
+
+
+
+		/* 태그 */
+
+
+		#tag {width:1260px; height: 500px; margin: 0 auto; background-color: rgb(220,220,220);}
+		#tag > .box {width: 270px; height: 500px; margin: 40px 20px; display: inline-block; text-align:center; overflow: hidden;}
+
+		#tag > .box > h5 > a {text-decoration:none; color:#000; text-align:center; font-size: 22px;}
+		#tag > .box > h4 > a {text-decoration:none; color:#666; text-align:center; font-size: 11px;}
+		#tag > .box > h6 > a {text-decoration:none; color:#666; text-align:center; font-size: 12px;}
+		#tag > .box > a > img {width: 270px; height: 270px;}
+		#tag > .box > a > img:hover {opacity: 0.7}
+
+		#tag > .box > h5 {margin: 20px 0px;}
+		#tag > .box > h4 {margin: 20px 0px;}
+		#block {width:1260px; height: 200px; margin: 0 auto; background-color: #fff;}
+
+
+
+
+
+		/* 푸터 */
+
+
+		footer {width: 1260px; height: 210px; margin:0 auto;}
+		footer > #box > ul {font-size: 12px; width: 900px; height: 40px; float: left; margin: 30px 0 0 0px;}
+		footer > #box > ul > li {float: left; font-size: 12px; margin:5px 10px;}
+		footer > #box > ul > li > a {text-decoration: none; color: #666;}
+		footer > #box > p {float: left; width: 900px; height: 40px; line-height: 150%; margin: 10px 0 0 10px; font-size: 12px; color: #666;}
+
+		footer > #sns > a> img {float: right; margin: 70px 0 0 0px; padding: 10px;}
+
+	</style>
+
+
+
+
+
+
+	
+
+
+</head>
+
+
+<body>
+
+
+<!-- 바디 -->
+
+	<header>
+		<div id="logo">
+			<img src="img/logo_img.img" alt="로고">
+		</div>
+
+		
+
+		<div id="logo2">
+			<ul>
+				<li><a href="#">BRAND</a></li>
+				<li><a href="#">BEST</a></li>
+				<li><a href="#">SALE</a></li>
+				<li><a href="#">REVIEW</a></li>
+				<li><a href="#">|</a></li>
+				<li><a href="#">MAGAZINE</a></li>
+				<a href="#"><img src="img/book.jpg" alt="book"></a>
+			</ul>
+		</div>
+
+
+		<div id="login">
+			<div class="imgbox">
+				<a href="#"><img src="img/d.jpg" alt="로그인1"></a>
+				<a href="#"><img src="img/j.jpg" alt="로그인1"></a>
+				<a href="#"><img src="img/p.jpg" alt="로그인1"></a>
+			</div>
+		</div>
+
+
+		
+	</header>
+	<hr>
+
+	
+	<nav>
+		<ul>
+			<li><a href="#">KITCHEN</a></li>
+			<li><a href="#">LIVING</a></li>
+			<li><a href="#">LIFE</a></li>
+			<li><a href="#">HOME</a></li>
+			<li><a href="#">PET</a></li>
+			<li><a href="#">FOOD</a></li>
+
+		</ul>
+
+	</nav>
+</div>
+
+<div id="slider">
+	<a href="#"><img src="img/slider.jpg" alt="슬라이더 이미지"></a>
+</div>
+
+
+<!-- 메인 베스트 아이템 -->
+
+
+<main>
+
+	<div id="product">
+		<h1><pre>B E S T   I T E M S</pre></h1>
+		<p>포플의 베스트 상품</p>
+		<div class="box">
+			<a href="#"><img src="img/box1.jpg" alt="box1"></a>
+			<h5><a href="#">[triangle]</a></h5>
+			<h4><a href="#">트라이앵글 조리도구</a></h4>
+			<h6><a href="#">23,000</a></h6>
+			<p><a href="#"><b>12,800</b></a></p>
+			<p class="free">[44%]</p>
+
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box2.jpg" alt="box2"></a>
+			<h5><a href="#">[KINTO]</a></h5>
+			<h4><a href="#">킨토 캐스트 엠버 글래스</a></h4>
+			<h6><a href="#">13,000</a></h6>
+			<p><a href="#"><b>11,700</b></a></p>
+			<p class="new">[10%]</p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box3.jpg" alt="box3"></a>
+			<h5><a href="#">[GLOBALKNIFE]</a></h5>
+			<h4><a href="#">글로벌나이프 미니쵸퍼 GS-102</a></h4>
+			<h6><a href="#">102,900</a></h6>
+			<p><a href="#"><b>72,100</b></a></p>
+			<p class="free">[30%]</p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box4.jpg" alt="box4"></a>
+			<h5><a href="#">[KINTO]</a></h5>
+			<h4><a href="#">킨토 아쿠아 유리화병 그레이</a></h4>
+			<h6><a href="#">25,000</a></h6>
+			<p><a href="#"><b>22,500</b></a></p>
+			<p>[10%]</p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box5.jpg" alt="box5"></a>
+			<h5><a href="#">[KINTO]</a></h5>
+			<h4><a href="#">킨토 아쿠아 투명 유리화병</a></h4>
+			<h6><a href="#">25,000</a></h6>
+			<p><a href="#"><b>22,500</b></a></p>
+			<p>[10%]</p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box6.jpg" alt="box6"></a>
+			<h5><a href="#">[EHWAJU]</a></h5>
+			<h4><a href="#">이화백주 [청와대 만찬주 선정]</a></h4>
+			<p><a href="#"><b>36,000</b></a></p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box7.jpg" alt="box7"></a>
+			<h5><a href="#">[NUTSOGOOD]</a></h5>
+			<h4><a href="#">넛쏘굿 당일 로스팅 하루견과</a></h4>
+			<p><a href="#"><b>30,000</b></a></p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box8.jpg" alt="box8"></a>
+			<h5><a href="#">[jeanneron]</a></h5>
+			<h4><a href="#">라귀올 테이블 양식기 마블</a></h4>
+			<h6><a href="#">18,500</a></h6>
+			<p><a href="#"><b>14,800</b></a></p>
+			<p>[20%]</p>
+		</div>
+
+
+	</div>
+
+
+
+
+</div>
+</main>
+
+
+
+
+<!-- 섹션 브랜드 초이스 -->
+
+	<section id="brand">
+		<h1><pre>B R A N D   C H O I C E</pre></h1>
+		<p>포플이 직접 엄선한 추천 브랜드</p>
+
+		<div class="box">
+			<a href="#"><img src="img/brand1.jpg" alt="브랜드1"></a>
+			<h3><a href="#">세련되고 모던한 감각의<br>프랑스 커트러리, 사브르</a></h3>
+			<h6><a href="#">최첨단 아크릴 소재와 고품질 스테인레스로<br> 매력적인 컬러를 선보이는 커트러리, 비스트로</a></h6>
+			<p><a href="#">SABRE</a href="#"></p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/brand2.jpg" alt="브랜드2"></a>
+			<h3><a href="#">오랜 경험이 만든 편의성<br>유니크한 감각의 테이블웨어</a></h3>
+			<h6><a href="#">일상의 휴식을 더 풍요롭게 하는<br>감각적인 디자인과 뛰어난 실용성</a></h6>
+			<p><a href="#">KINTO</a href="#"></p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/brand3.jpg" alt="브랜드3"></a>
+			<h3><a href="#">숨쉬는 솥의 뛰어난 열효율성<br>윤기촉촉~ 맛있는 밥의 비밀</a></h3>
+			<h6><a href="#">좋은 흙과 두툼한 성형, 이중뚜껑으로 열을 잡아<br>맛있는 밥을 완성하는 비법</a></h6>
+			<p><a href="#">IGAMONO</a href="#"></p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/brand4.jpg" alt="브랜드4"></a>
+			<h3><a href="#">동물 친구들을 위한<br>라이프스타일 디자인 브랜드</a></h3>
+			<h6><a href="#">함께 공존하는 공간에 자연스럽게 스며들 수 있는<br> 편리하고 섬세한 물건들을 만듭니다.</a></h6>
+			<p><a href="#">SMALLSTUFF</a href="#"></p>
+		</div>
+
+	</section>
+
+
+
+ 	<section id="love">
+ 			<div class="box">
+ 			<a href="#"><img src="img/love.jpg" alt="강아지"></a>
+ 			</div>
+ 	</section>
+
+
+
+
+
+
+<!-- 뉴 아이템 -->
+
+
+<section id="items">
+	<div id="contents">
+		<h1><pre>N E W   I T E M S</pre></h1>
+		<p>포플만의 뉴 아이템</p>
+		<div class="box">
+			<a href="#"><img src="img/box9.jpg" alt="box9"></a>
+			<h5><a href="#">[SMITHTEA]</a></h5>
+			<h4><a href="#">스미스티 아이스티 3종 (12ea)</a></h4>
+			<p><a href="#"><b>33,000</b></a></p>
+			
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box10.jpg" alt="box10"></a>
+			<h5><a href="#">[today&tomorrow]</a></h5>
+			<h4><a href="#">루스티켈라 스파게티면 7종</a></h4>
+			<p><a href="#"><b>8,900</b></a></p>
+		
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box11.jpg" alt="box11"></a>
+			<h5><a href="#">[triangle]</a></h5>
+			<h4><a href="#">트라이앵글 실리콘 믹싱스푼</a></h4>
+			<h6><a href="#">22,000</a></h6>
+			<p><a href="#"><b>17,600</b></a></p>
+			<p>[10%]</p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box12.jpg" alt="box12"></a>
+			<h5><a href="#">[KINTO]</a></h5>
+			<h4><a href="#">킨토 캐스트 볼 3종 소스 종지</a></h4>
+			<h6><a href="#">5,800</a></h6>
+			<p><a href="#"><b>5,300</b></a></p>
+			<p>[10%]</p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box13.jpg" alt="box13"></a>
+			<h5><a href="#">[J&T]</a></h5>
+			<h4><a href="#">코이누 스테인리스 믹싱볼</a></h4>
+			<h6><a href="#">22,000</a></h6>
+			<p><a href="#"><b>19,800</b></a></p>
+			<p>[10%]</p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box14.jpg" alt="box14"></a>
+			<h5><a href="#">[jeanneron]</a></h5>
+			<h4><a href="#">라귀올 버터나이프 12종</a></h4>
+			<h6><a href="#">18,000</a></h6>
+			<p><a href="#"><b>14,400</b></a></p>
+			<p>[20%]</p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box15.jpg" alt="box15"></a>
+			<h5><a href="#">[jeanneron]</a></h5>
+			<h4><a href="#">라귀올 치즈커터 7종 / 라기올</a></h4>
+			<h6><a href="#">22,000</a></h6>
+			<p><a href="#"><b>17,600</b></a></p>
+			<p>[20%]</p>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/box16.jpg" alt="box16"></a>
+			<h5><a href="#">[KINTO]</a></h5>
+			<h4><a href="#">킨토 유니티 유리컵 3종</a></h4>
+			<h6><a href="#">9,900</a></h6>
+			<p><a href="#"><b>9,000</b></a></p>
+			<p>[10%]</p>
+		</div>
+	</div>
+</section>
+
+
+
+<!-- 아티클 태그 -->
+
+<article>
+
+	<div id="tag">
+		<div class="box">
+			<a href="#"><img src="img/tag1.jpg" alt="태그1"></a>
+			<h5><a href="#">#청소</a></h5>
+			<h4><a href="#">대청소, 다양한 도구로 먼지와 세균을 말끔하게</a></h4>
+			<h6><a href="#"><u>제품 보러가기 ></u></a></h6>
+		</div>
+	
+
+		<div class="box">
+			<a href="#"><img src="img/tag2.jpg" alt="태그2"></a>
+			<h5><a href="#">#파스타</a></h5>
+			<h4><a href="#">세계가 인정한 깊이있는 파스타 소스의 풍미</a></h4>
+			<h6><a href="#"><u>제품 보러가기 ></u></a></h6>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/tag3.jpg" alt="태그3"></a>
+			<h5><a href="#">#트러플</a></h5>
+			<h4><a href="#">요리의 마지막을 장식하는 피날레!</a></h4>
+			<h6><a href="#"><u>제품 보러가기 ></u></a></h6>
+		</div>
+
+		<div class="box">
+			<a href="#"><img src="img/tag4.jpg" alt="태그4"></a>
+			<h5><a href="#">#텀블러</a></h5>
+			<h4><a href="#">다양한 색상과 감각적인 디자인 프리미엄 보틀</a></h4>
+			<h6><a href="#"><u>제품 보러가기 ></u></a></h6>
+		</div>
+
+	</div>
+
+	<div id="block">
+	</div>
+
+
+</article>
+
+
+
+
+<!-- 푸터 -->
+
+
+<hr>
+<footer>
+	<div id="sns">
+		<a href=""#><img src="img/sns.jpg" alt="에스엔에스"></a></div>
+	</div>
+	<div id="box">
+		<ul>
+			<li><a href="#">About POPL</a></li>
+			<li><a href="#">약관 및 정책</a></li>
+			<li><a href="#">입점문의</a></li>
+			<li><a href="#">공지사항</a></li>
+			<li><a href="#">대량주문 문의</a></li>
+			<li><a href="#">FAQ</a></li>
+		</ul>
+
+		<p>
+			사업자명:(주)디스토션 사업장소재지:서울특별시 강남구 논현로136길 23, 2층(논현동, JS빌딩) 고객센터:02-3443_2850 [평일 10:00~ ~ 18:00(토/일/공휴일 휴무)]<br>
+			이메일:cs@popl.co.kr 사업자등록번호:211-88-89258 통신판매업신고:제2015-서울강남-02714호<br>
+			대표이사:이향란 개인정보책임자:이동재<br>
+			<b>Copyright @ 2020 Dstortion corp. All Rights Reserved.</b>
+		</p>
+	</div>
+</footer>
+
+
+</body>
+</html>	

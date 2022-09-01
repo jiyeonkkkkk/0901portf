@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+
+
+	<style>
+
+		* {margin:0; box-sizing:border-box; font-family:"맑은 고딕";}
+		ul, ol, li {list-style:none; margin:0; padding:0;}
+
+
+		/* 뉴 아이템 컨텐츠 */
+
+
+		#items {width: 1260px; height: 1100px; margin: 0 auto;}
+		#contents > h1 {font-size: 22px; color: #000; text-align: center; padding:170px 100px 0 100px;}
+		#contents > p {text-decoration:none; color:#666; text-align:center; font-size:12px; margin:10px 0 60px 0px;}
+	
+
+		#contents > .box {width: 280px; height: 390px; padding: 10px; margin: 20px;display: inline-block; text-align:left; overflow: hidden;}
+		#contents > .box > a > img {width: 260px; height: 260px;}
+		#contents > .box > a > img:hover {opacity: 0.7}
+
+		#contents > .box > h5 > a {text-decoration:none; color:#000; text-align:center; font-size: 12px;}
+		#contents > .box > h4 > a {text-decoration:none; color:#666; text-align:center; font-size: 14px;}
+		#contents > .box > h6 > a {text-decoration:none; color:#666; text-align:center; font-size: 11px;}
+		
+
+		#contents > .box > p > a {text-decoration:none; color:#000; text-align:center; font-size: 11px;}
+		#contents > .box > p {display: inline; color: orange; font-weight:bold; font-size: 11px;}
+	
+
+
+		#contents > .box > .free > p > a:after {content: "무료배송"; background-color:#fff; display:inline-block; border: 1px solid #ddd; font-size: 10px; margin: 10px 0 0 0px; padding: 3px;}
+
+		#contents > div:first-of-type {margin: -10px 0 0 20px;}
+		
+		#contents > div:nth-of-type(2) {margin: 0 0 0 20px;}
+
+		#contents > div:nth-of-type(3) {margin: 0 0 0 20px;}
+		#contents > div:nth-of-type(4) {margin: 0 0 0 20px;}
+		#contents > div:nth-of-type(5) {margin:30px 0 0 20px;}
+		#contents > div:nth-of-type(6) {margin:30px 0 0 20px;}
+
+		#contents > div:nth-of-type(7) {margin:30px 0 0 20px;}
+		#contents > div:last-of-type {margin: 30px 0 0 20px;}
+
+
+	</style>
+
+	<script>
+
+			$(function(){
+
+				$.ajax({
+
+					url: "./new.json",
+
+					dataType: "json",
+
+					success : function(data){
+
+						if(data.length>0){
+
+							for(var i in data){
+
+								$(".box").eq(i).append('<a href="#">' + "<img src='img/"+data[i].url+"'/>" + '</a>'); 
+
+								$(".box").eq(i).append('<h5><a href="#">'+data[i].title+"</a><h5>");      
+
+								$(".box").eq(i).append('<h4><a href="#">'+data[i].subtitle+"</a></h4>");                             
+
+								$(".box").eq(i).append("<h6>"+data[i].price1+"</h6>");
+
+								$(".box").eq(i).append('<p><a href="#"><b>'+data[i].price2+"</b></a></p>");  
+
+								$(".box").eq(i).append('<p class="free">'+data[i].free+"</p>"); 
+
+
+							}
+
+						}
+
+					}
+
+				});
+
+			});
+
+
+		</script>
+
+
+
+</head>
+
+
+<body>
+
+<!-- 뉴 아이템 -->
+
+
+<section id="items">
+	<div id="contents">
+
+		<h1><pre>N E W   I T E M S</pre></h1>
+		<p>포플만의 뉴 아이템</p>
+
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+
+	</div>
+</section>
+
+<script>
+
+		window.onload = function (){
+
+
+        // title
+
+        var title =document.getElementById("title")
+
+        title.innerHTML = "N E W  I T E M S";
+
+
+        // sub title
+
+        var subtitle = document.createElement("p");
+
+        var textnode = document.createTextNode("포플의 베스트 상품");
+
+        subtitle.appendChild(textnode);
+
+        title.appendChild(subtitle);
+
+
+</script>
+
+
+</body>
+</html>	
